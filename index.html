@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style2.css">
+<script src="script.js"></script>
+<link rel="icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" href="/logo192.png" />
+  <title>Secret Profile</title>
+</head>
+<body>
+  <img src="img/300.jpg" alt="Profile Picture">
+  <button onclick="myFunction()">View my profile</button>
+  <script>
+function myFunction() {
+    
+    app = "vnd.youtube://youtube.com/redirect?event=comments&redir_token=QUFFLUhqbjFqUC1Wd0RWWVB2VTduLVZUREdzbWd4QTJpUXxBQ3Jtc0ttTVhZWFNkZ0didi1RMUFPcUxINGp0WmVTaDNjRmNEbWpHU2VmZzZ5UTFUdlBfVEEzXzRxS3hLLXppZHlXNm5NbExMYVJLemxZd0FpT2ZMN3RlTUwwd2Vpa3pCdXhjTFdGcFJrblIxcUlVX0toWFBQVQ&q=https%3A%2F%2Fv.ht%2Fidcqv&html_redirect=1";
+
+    if( /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ) {
+        window.location = app;
+        window.setTimeout(function() {
+            window.location = mobileFallback;
+        }, 25);
+    } else {
+        window.location = desktopFallback;
+    }
+
+    function killPopup() {
+        window.removeEventListener('pagehide', killPopup);
+    }
+
+    window.addEventListener('pagehide', killPopup);
+}
+</script>
+		</br>
+		</br>
+		<div class="container">
+					<h1>If you can't access the site, copy the link by clicking on the "COPY LINK" button and Paste it to any browser</h1>
+					<input type="text" id="text-to-copy" value="https://is.gd/IQ1" readonly>
+					<button id="copy-button" onclick="copyToClipboard()">Copy Link</button>
+		</div>
+
+</body>
+</html>
